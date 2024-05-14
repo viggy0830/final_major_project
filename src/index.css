@@ -1,13 +1,44 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer utilities {
+  .scrollbar::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    display: flex;
+  }
+  .scrollbar::-webkit-scrollbar-track {
+    border-radius: 100vh;
+    background: #FFFFFF;
+  }
+  .scrollbar::-webkit-scrollbar-thumb {
+    background: #555555;
+    border-radius: 100vh;
+    border: 1px solid #555555;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer utilities {
+  .scrollbar-hidden::-webkit-scrollbar {
+    width: 1px;
+    height: 0px;
+  }
+  .scrollbar-hidden::-webkit-scrollbar-track {
+    border-radius: 100vh;
+    background: #FFFFFF;
+  }
+  .scrollbar-hidden::-webkit-scrollbar-thumb {
+    background: #555555;
+    border-radius: 100vh;
+    border: 1px solid #555555;
+  }
+}
+
+@layer base {
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 }
